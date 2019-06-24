@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { BorderCardDirective } from './directives/border-card.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonsComponent,
-    PokemonComponent
+    PokemonComponent,
+    BorderCardDirective
   ],
   imports: [
     BrowserModule,
