@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { BorderCardDirective } from './directives/border-card.directive';
+import {PokemonTypeColorPipe} from "./pipes/pokemon-type-color.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonsComponent,
     PokemonComponent,
-    BorderCardDirective
+    BorderCardDirective,
+      PokemonTypeColorPipe
   ],
   imports: [
     BrowserModule,
