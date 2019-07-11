@@ -8,6 +8,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { BorderCardDirective } from './directives/border-card.directive';
 import {PokemonTypeColorPipe} from "./pipes/pokemon-type-color.pipe";
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
+import {RoutingModule} from "./routing/routing.module";
 
 @NgModule({
   declarations: [
@@ -16,11 +17,12 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
     PokemonComponent,
     BorderCardDirective,
     PokemonTypeColorPipe,
-    DetailPokemonComponent
+    DetailPokemonComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
