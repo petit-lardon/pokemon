@@ -3,7 +3,7 @@
 <div class='container'>
   <div class="row">
     <div *ngFor='let pokemon of pokemons' class="col s6 m4">
-      <app-pokemon [pokemon]="pokemon"></app-pokemon>
+      <app-pokemon [pokemon]="pokemon" (click)="selectPokemon(pokemon)"></app-pokemon>
     </div>
   </div>
 </div>
