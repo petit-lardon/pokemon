@@ -1,35 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import {Pokemon} from "../pokemon/pokemon";
 import {ActivatedRoute, Router} from "@angular/router";
-import {POKEMONS} from "../pokemons/mock-pokemons";
+import {PokemonsService} from "../services/pokemons.service";
 
 @Component({
   selector: 'app-detail-pokemon',
   templateUrl: './detail-pokemon.component.html',
-  styleUrls: ['./detail-pokemon.component.scss']
+  styleUrls: ['./detail-pokemon.component.scss'],
+  providers: [PokemonsService]
 })
 export class DetailPokemonComponent implements OnInit {
-  pokemons: Pokemon[] = null;
   pokemon: Pokemon = null;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private pokemonsService: PokemonsService) { }
 
   ngOnInit(): void {
-    this.pokemons = POKEMONS;
-
-    let id = +this.route.snapshot.paramMap.get('id');//synchrone. le programme est bloqué tant qu'on a pas récupéré le paramètre de l'url
-    // + permet de caster la variable en un nombre
-    for (let i = 0; i < this.pokemons.length; i++) {
-      if(this.pokemons[i].id === id) {
-        this.pokemon = this.pokemons[i];
-      }
-    }
+    let id = +this.route.snapshot.paramMap.get('id');
+    this.pokemon = this.pokemonsService.getPokemon(id);
   }
 
   goBack(): void {
     this.router.navigate(['/pokemons']);
-    /**
-     * window.history.back();
-     */
   }
 }
