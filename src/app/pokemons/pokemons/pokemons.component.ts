@@ -3,11 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import {POKEMONS} from "./mock-pokemons";
 import {Pokemon} from "../pokemon/pokemon";
 import {Router} from "@angular/router";
+import {PokemonsService} from "../services/pokemons.service";
 
 @Component({
   selector: 'app-pokemons',
   templateUrl: './pokemons.component.html',
-  styleUrls: ['./pokemons.component.scss']
+  styleUrls: ['./pokemons.component.scss'],
+  providers: [PokemonsService]
 })
 export class PokemonsComponent implements OnInit {
 
@@ -15,7 +17,7 @@ export class PokemonsComponent implements OnInit {
   private title: String = 'Liste des Pokémons';
   private selectedPokemon: Pokemon;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private pokemonService: PokemonsService) { }
 
   ngOnInit() {
     this.pokemons = POKEMONS
