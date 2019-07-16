@@ -21,7 +21,9 @@ export class PokemonFormComponent implements OnInit {
 
   hasType(type: string): boolean {
     const index = this.pokemon.types.indexOf(type);
-    if (~index) return true;
+    if (~index) {
+      return true;
+    }
     return false;
   }
 

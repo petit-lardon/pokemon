@@ -59,7 +59,7 @@
                      [disabled]="!isTypesValid(type)"
                      (change)="selectType($event, type)"/>
               <span [attr.for]="type">
-                <div class="{{ type | pokemonTypeColor }}">
+                <div class="{{ type | pkmTypeColor }}">
                   {{ type }}
                 </div>
               </span>
