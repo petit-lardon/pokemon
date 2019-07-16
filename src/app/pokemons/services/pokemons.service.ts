@@ -14,12 +14,16 @@ export class PokemonsService {
   }
 
   getPokemon(id: number): Pokemon {
-    let pokemons = this.getPokemons();
+    const pokemons = this.getPokemons();
 
-    for(let i = 0; i < pokemons.length; i++) {
-      if(id === pokemons[i].id){
+    for (let i = 0; i < pokemons.length; i++) {
+      if (id === pokemons[i].id) {
         return pokemons[i];
       }
     }
+  }
+
+  getPokemonsTypes(): Array<string> {
+      return ['Plante', 'Poison', 'Feu', 'Eau', 'Insecte', 'Normal', 'Vol', 'Electrik', 'Fée'];
   }
 }
