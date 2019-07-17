@@ -3,7 +3,7 @@
     <h2 class="header center">{{ pokemon.name }}</h2>
     <div class="card horizontal hoverable">
       <div class="card-image">
-        <img src="pokemon.picture">
+        <img [src]="pokemon.picture">
       </div>
       <div class="card-stacked">
         <div class="card-content">
@@ -36,6 +36,7 @@
         </div>
         <div class="card-action">
           <a (click)="goBack()">Retour</a>
+          <a (click)="editPokemon(pokemon)">Modifier</a>
         </div>
       </div>
     </div>
